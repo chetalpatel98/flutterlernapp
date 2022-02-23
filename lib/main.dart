@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/screens/home_page.dart';
 import 'package:flutter_application_2/screens/loginpage.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 void main() {
   runApp( MyApp());
 }
@@ -12,9 +12,12 @@ void main() {
   Widget build(BuildContext context)
    {
     return MaterialApp(
-      initialRoute: "/home_page",
+      theme: ThemeData(
+        fontFamily: GoogleFonts.lato().fontFamily,
+      ),
+      initialRoute: "/",
       routes: {
-        "/login_page":(context) => login_page(),
+        "/":(context) => login_page(),
         "/home_page":(context) => home_page(),
       },
 
