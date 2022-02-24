@@ -1,4 +1,7 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/utils/routs.dart';
 import 'package:google_fonts/google_fonts.dart';
 class login_page extends StatelessWidget
  {
@@ -11,7 +14,9 @@ class login_page extends StatelessWidget
       color: Colors.white,
       child: Column(
         children: [
-         SizedBox( height: 100, ),
+           SizedBox( height: 70, ),
+          
+         SizedBox( height: 30, ),
           Image.asset('image/login_image.png',fit:BoxFit.cover ,),
           SizedBox( height: 30,),
           Text('Login',style: TextStyle(color: Colors.blue,fontSize: 25,fontWeight: FontWeight.bold),),
@@ -23,8 +28,8 @@ class login_page extends StatelessWidget
             children: [
               TextFormField(
                 decoration:InputDecoration(
-                  hintText: "enter your name",
-                  labelText: "Name",
+                  hintText: "enter your email",
+                  labelText: "Email",
                 ),
               ),
               TextFormField(
@@ -46,7 +51,7 @@ class login_page extends StatelessWidget
               ElevatedButton(
                
                onPressed:(){}, 
-               style:TextButton.styleFrom(padding:EdgeInsets.symmetric(horizontal: 35,)),
+               style:TextButton.styleFrom(padding:EdgeInsets.symmetric(horizontal: 35,),backgroundColor: Colors.black87),
                child:Text("Login"),
                ),
                SizedBox(
@@ -55,12 +60,29 @@ class login_page extends StatelessWidget
                 ElevatedButton(
                
                onPressed:(){}, 
-               style:TextButton.styleFrom(padding:EdgeInsets.symmetric(horizontal: 35,)),
+               style:TextButton.styleFrom(padding:EdgeInsets.symmetric(horizontal: 35,),backgroundColor: Colors.black87),
                child:Text("Cancel"),
                ),
             ],
           ),
-        
+        SizedBox(height: 110,),
+        Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+                
+           MaterialButton(
+                      onPressed: () { Navigator.pushNamed(context, MyRoutes.Home_page);},
+                       color: Colors.black87,
+                       textColor: Colors.white,
+                        child: Icon(
+                                  Icons.arrow_back_ios_new_rounded,
+                               size: 16,
+                                    ),
+                        padding: EdgeInsets.all(5),
+                      shape: CircleBorder(),
+                      )
+             ],
+          ),
 
 
         ],
