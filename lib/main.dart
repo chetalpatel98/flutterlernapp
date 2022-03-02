@@ -14,10 +14,11 @@ void main() {
   Widget build(BuildContext context)
    {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
-      initialRoute: MyRoutes.Signin_page,
+      initialRoute: MyRoutes.Home_page,
       routes: {
          MyRoutes.login_page:(context) => login_page(),
          MyRoutes.Home_page:(context) => home_page(),

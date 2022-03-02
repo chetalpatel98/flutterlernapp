@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/screens/mydrower.dart';
 import 'package:flutter_application_2/utils/routs.dart';
 class home_page extends StatelessWidget {
   const home_page({Key? key}) : super(key: key);
@@ -7,8 +8,12 @@ class home_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-           color: Colors.white,
-       child: Column(
+     
+      child:Scaffold(
+    backgroundColor: Colors.white,
+           appBar: AppBar(backgroundColor: Colors.black87,),
+          
+       body: Column(
                  
                 children: [
                   SizedBox( height: 100,),
@@ -40,8 +45,9 @@ class home_page extends StatelessWidget {
                   )
                 ],
               
-            )
-    
+            ),
+             drawer: MyDrawer(),
+      ),
     );
   }
 }

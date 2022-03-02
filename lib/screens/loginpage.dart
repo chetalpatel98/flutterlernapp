@@ -3,10 +3,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/utils/routs.dart';
 import 'package:google_fonts/google_fonts.dart';
-class login_page extends StatelessWidget
+class login_page extends StatefulWidget
  {
-  var ishover =true;
+  @override
+  State<login_page> createState() => _login_pageState();
+}
 
+class _login_pageState extends State<login_page> {
+  var ishover =true;
+  bool loginbutten =false;
+ final _formkey =GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -22,32 +28,40 @@ class login_page extends StatelessWidget
           Text('Login',style: TextStyle(color: Colors.blue,fontSize: 25,fontWeight: FontWeight.bold),),
           SizedBox( height: 20,),
          
-         Padding(padding:EdgeInsets.symmetric(vertical: 10,horizontal: 20), 
-          child: Column(
-             
-            children: [
-              TextFormField(
-                decoration:InputDecoration(
-                  hintText: "enter your email",
-                  labelText: "Email",
+        
+         
+            Padding(padding:EdgeInsets.symmetric(vertical: 10,horizontal: 20), 
+            child: Column(
+               key: _formkey,
+              children: [
+                TextFormField(
+                  decoration:InputDecoration(
+                    hintText: "enter your email",
+                    labelText: "Email",
+                  ),
+                 
+                    
+                               ),
+                TextFormField(
+                   obscureText: true,
+                  decoration:InputDecoration(
+                    hintText: "Password",
+                    labelText: "Password",
+                    
+                  ),
                 ),
-              ),
-              TextFormField(
-                 obscureText: true,
-                decoration:InputDecoration(
-                  hintText: "Password",
-                  labelText: "Password",
-                  
-                ),
-              ),
-            ],
-         )
-         ),
+              ],
+           )
+           ),
+        
          SizedBox(height: 40,),
            
           Row(
            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+
+             
+              
               ElevatedButton(
                
                onPressed:(){}, 
@@ -71,7 +85,9 @@ class login_page extends StatelessWidget
             children: [
                 
            MaterialButton(
-                      onPressed: () { Navigator.pushNamed(context, MyRoutes.Home_page);},
+                      onPressed: () { 
+                        Navigator.pushNamed(context, MyRoutes.Home_page);
+                        },
                        color: Colors.black87,
                        textColor: Colors.white,
                         child: Icon(
